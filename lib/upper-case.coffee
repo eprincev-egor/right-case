@@ -3,13 +3,12 @@ module.exports =
     atom.commands.add 'atom-text-editor',
       'upper-case:toggle': ->
         editor = atom.workspace.getActiveTextEditor()
-        toggleUpperCaseInSelection(editor, titleCase)
+        toggleUpperCaseInSelection(editor)
 
 # Public: Executes the replacement function on each selection in the editor.
 #
 # * `editor` {TextEditor} to replace selections in.
-# * `fn` {Function} to use to replace selected text.
-toggleUpperCaseInSelection = (editor, fn) ->
+toggleUpperCaseInSelection = (editor) ->
   editor.mutateSelectedText (selection) ->
     text = selection.getText()
     
@@ -19,4 +18,6 @@ toggleUpperCaseInSelection = (editor, fn) ->
       text = text.toUpperCase()
       
     selection.delete()
-    selection.insertText(text)
+    selection.insertText(text, {
+        select: true
+    })
