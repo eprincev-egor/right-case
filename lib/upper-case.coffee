@@ -12,10 +12,10 @@ toggleUpperCaseInSelection = (editor) ->
   editor.mutateSelectedText (selection) ->
     text = selection.getText()
     
-    if /^[\$_A-Z\d]+$/.test( text )
-      text = text.toLowerCase()
-    else
+    if /[a-z]/.test( text )
       text = text.toUpperCase()
+    else
+      text = text.toLowerCase()
       
     selection.delete()
     selection.insertText(text, {
