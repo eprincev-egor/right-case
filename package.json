@@ -1,6 +1,6 @@
 {
-  "name": "right-case",
-  "main": "./lib/right-case",
+  "name": "upper-case-toggle",
+  "main": "./lib/upper-case",
   "version": "0.2.0",
   "description": "Converts the word or selection to the case style you choose.",
   "keywords": [
@@ -9,10 +9,10 @@
     "replace",
     "modify"
   ],
-  "repository": "https://github.com/lee-dohm/right-case",
+  "repository": "https://github.com/eprincev-egor/upper-case-toggle",
   "activationCommands": {
     "atom-text-editor": [
-      "right-case:title-case"
+      "upper-case:toggle"
     ]
   },
   "license": "MIT",
